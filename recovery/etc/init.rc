@@ -39,7 +39,7 @@ on boot
 
 service usbconfig /sbin/usbconfig
 
-service recovery /sbin/recovery.sh
+service recovery /sbin/recovery
 
 service adbd /sbin/adbd recovery
 
