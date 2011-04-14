@@ -18,7 +18,7 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x0cf80000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x0d020000
 BOARD_FLASH_BLOCK_SIZE := 0x00020000
 
-TARGET_PREBUILT_KERNEL := device/zte/blade/kernel
+TARGET_PREBUILT_KERNEL := device/zte/blade/recovery_kernel_gen1
 
 BOARD_DATA_DEVICE := /dev/block/mtdblock6
 BOARD_DATA_FILESYSTEM := auto
@@ -31,4 +31,11 @@ BOARD_CACHE_FILESYSTEM := auto
 BOARD_CACHE_FILESYSTEM_OPTIONS := rw
 
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/zte/blade/recovery/recovery_ui.c
+
+BOARD_HAS_FLIPPED_SCREEN := true
+
+BOARD_USE_USB_MASS_STORAGE_SWITCH := true
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun
+
+BOARD_UMS_LUNFILE := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
 

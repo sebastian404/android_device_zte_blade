@@ -3,6 +3,7 @@
 #when       whom            what, where, why
 #--------   ----            ---------------------------------------------------
 #2010-12-08 sebastian404    inital build
+#2011-03-31 sebastian404    fix usbconfig for 2.6.32 kernel
 ##########################################
 
 on early-init
@@ -26,7 +27,7 @@ on init
     mkdir /tmp 01777 root root
 
     # mount inital filesystems
-    mount tmpfs tmpfs /tmp size=4mi
+    mount tmpfs tmpfs /tmp size=8m
     devwait /dev/block/mmcblk0p1
     mount vfat /dev/block/mmcblk0p1 /sdcard rw
 
@@ -38,6 +39,7 @@ on boot
     class_start default
 
 service usbconfig /sbin/usbconfig
+    oneshot
 
 service recovery /sbin/recovery
 

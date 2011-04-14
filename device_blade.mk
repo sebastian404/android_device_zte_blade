@@ -9,7 +9,7 @@ DEVICE_PACKAGE_OVERLAYS += device/zte/blade/overlay
 
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := device/zte/blade/kernel
+	LOCAL_KERNEL := device/zte/blade/recovery_kernel_gen1
 else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
